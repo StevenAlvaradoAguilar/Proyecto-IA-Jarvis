@@ -1,9 +1,8 @@
 
-
+    
 import face_recognition
 import cv2
 import numpy as np
-
 
 # Obtiene la referencia de la cámara
 video_capture = cv2.VideoCapture(0)
@@ -45,9 +44,10 @@ while True:
     small_frame = cv2.resize(frame, (0,0), fx = 0.25, fy = 0.25)
 
     # Convertir la imagen de BGR (colores que utliza OpenCV) a RGB
-    rgb_small_frame = small_frame[:, :, ::-1]
+    #rgb_small_frame = small_frame[:, :, ::-1]   
+    rgb_small_frame = np.ascontiguousarray(small_frame[:, :, ::-1])
 
-    if process_this_frame:
+    if process_this_frame:  
         # Encuentra todas las caras y caras codiicadas en el frame
         face_locations = face_recognition.face_locations(rgb_small_frame)
         # OJO ACA, PUEDE QUE DEBA CAMBIARLO
@@ -92,4 +92,10 @@ while True:
     # Desplegar la imagen
     cv2.imshow('Video', frame)
 
-    
+    # Hit 'q' on the keyboard to quit!
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Release handle to the webcam
+video_capture.release()
+cv2.destroyAllWindows()
