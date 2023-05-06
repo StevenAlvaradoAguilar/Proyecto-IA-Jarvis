@@ -20,17 +20,22 @@ steven_image_encoding = face_recognition.face_encodings(steven_image)[0]
 victor_image = face_recognition.load_image_file("users/victor.jpg")
 victor_image_encoding = face_recognition.face_encodings(victor_image)[0]
 
+azofeifa_image = face_recognition.load_image_file("users/azofeifa.jpg")
+azofeifa_image_encoding = face_recognition.face_encodings(azofeifa_image)[0]
+
 # Se crea un arreglo con los códigos de las caras conocidas y con sus nombres
 known_face_encodings = [
     jordan_image_encoding,
     steven_image_encoding,
-    victor_image_encoding
+    victor_image_encoding,
+    azofeifa_image_encoding
 ]
 
 known_face_names = [
     "Jordan",
     "Steven",
-    "Victor"
+    "Victor",
+    "Azofeifa"
 ]
 
 # Inicialización de variables necesarias

@@ -14,3 +14,7 @@ env1/
 env1/Lib/site-packages/clang/native/libclang.dll/
 
 env1/Lib/site-packages/tensorflow/python/_pywrap_tensorflow_internal.pyd/ 
+
+.vs/
+
+__pycache__/
