@@ -1,0 +1,16 @@
+# Ignorar archivos de configuración locales
+config.ini
+
+# Ignorar directorios generados automáticamente
+build/
+dist/
+
+# Ignorar archivos y directorios específicos
+secret_key.txt
+logs/
+
+env1/
+
+env1/Lib/site-packages/clang/native/libclang.dll/
+
+env1/Lib/site-packages/tensorflow/python/_pywrap_tensorflow_internal.pyd/ 
